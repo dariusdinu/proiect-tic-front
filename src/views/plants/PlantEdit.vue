@@ -102,7 +102,7 @@ export default {
   methods: {
     async getPlant() {
       const plant = await axios.get(
-        `${process.env.VUE_APP_API_URL}/plants/${this.id}`
+        `https://tic-project-plantly.herokuapp.com/plants/${this.id}`
       );
       const {
         name,
@@ -140,7 +140,7 @@ export default {
         maxHeight: this.maxHeight,
       };
       await axios.put(
-        `${process.env.VUE_APP_API_URL}/admin/plants/${this.id}`,
+        `https://tic-project-plantly.herokuapp.com/admin/plants/${this.id}`,
         plant,
         {
           headers: {

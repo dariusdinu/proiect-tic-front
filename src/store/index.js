@@ -82,21 +82,28 @@ export default createStore({
       });
     },
     async loadPlants({ commit }) {
-      const plants = await axios.get(`${process.env.VUE_APP_API_URL}/plants`);
+      const plants = await axios.get(
+        `https://tic-project-plantly.herokuapp.com/plants`
+      );
       commit("setPlants", plants?.data || []);
     },
     async deletePlant({ commit }, id) {
-      await axios.delete(`${process.env.VUE_APP_API_URL}/admin/plants/${id}`, {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      const plants = await axios.get(`${process.env.VUE_APP_API_URL}/plants`);
+      await axios.delete(
+        `https://tic-project-plantly.herokuapp.com/admin/plants/${id}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      const plants = await axios.get(
+        `https://tic-project-plantly.herokuapp.com/plants`
+      );
       commit("setPlants", plants?.data || []);
     },
     async deleteReminder({ commit }, { id, reminderId }) {
       await axios.delete(
-        `${process.env.VUE_APP_API_URL}/admin/plants/${id}/reminders/${reminderId}`,
+        `https://tic-project-plantly.herokuapp.com/admin/plants/${id}/reminders/${reminderId}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -104,19 +111,19 @@ export default createStore({
         }
       );
       const reminders = await axios.get(
-        `${process.env.VUE_APP_API_URL}/plants/${id}/reminders`
+        `https://tic-project-plantly.herokuapp.com/plants/${id}/reminders`
       );
       commit("setReminders", reminders?.data || []);
     },
     async loadReminders({ commit }, { id }) {
       const reminders = await axios.get(
-        `${process.env.VUE_APP_API_URL}/plants/${id}/reminders`
+        `https://tic-project-plantly.herokuapp.com/plants/${id}/reminders`
       );
       commit("setReminders", reminders?.data || []);
     },
     async loadAllReminders({ commit }) {
       const reminders = await axios.get(
-        `${process.env.VUE_APP_API_URL}/reminders`
+        `https://tic-project-plantly.herokuapp.com/reminders`
       );
       commit("setReminders", reminders?.data || []);
     },

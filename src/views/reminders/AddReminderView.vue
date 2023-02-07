@@ -85,7 +85,7 @@ export default {
         timeUnit: this.timeUnit,
       };
       await axios.post(
-        `${process.env.VUE_APP_API_URL}/admin/plants/${this.id}/reminders`,
+        `https://tic-project-plantly.herokuapp.com/admin/plants/${this.id}/reminders`,
         reminder,
         {
           headers: {

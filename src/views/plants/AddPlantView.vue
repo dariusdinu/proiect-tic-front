@@ -115,11 +115,15 @@ export default {
         color: this.color,
         maxHeight: this.maxHeight,
       };
-      await axios.post(`${process.env.VUE_APP_API_URL}/admin/plants`, plant, {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await axios.post(
+        `https://tic-project-plantly.herokuapp.com/admin/plants`,
+        plant,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       this.$router.push(`/`);
     },
     resetError() {

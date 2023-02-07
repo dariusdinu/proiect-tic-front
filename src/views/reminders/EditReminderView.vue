@@ -77,7 +77,7 @@ export default {
   methods: {
     async getReminder() {
       const reminder = await axios.get(
-        `${process.env.VUE_APP_API_URL}/plants/${this.id}/reminders/${this.reminderId}`
+        `https://tic-project-plantly.herokuapp.com/plants/${this.id}/reminders/${this.reminderId}`
       );
       const { timeUnit, name, type, startDate, numberOfTimeUnits } =
         reminder.data || {};
@@ -100,7 +100,7 @@ export default {
         numberOfTimeUnits: this.numberOfTimeUnits,
       };
       await axios.put(
-        `${process.env.VUE_APP_API_URL}/admin/plants/${this.id}/reminders/${this.reminderId}`,
+        `https://tic-project-plantly.herokuapp.com/admin/plants/${this.id}/reminders/${this.reminderId}`,
         reminder,
         {
           headers: {

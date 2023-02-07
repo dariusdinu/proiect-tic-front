@@ -101,7 +101,7 @@ export default {
   methods: {
     async getPlant() {
       const plant = await axios.get(
-        `${process.env.VUE_APP_API_URL}/plants/${this.id}`
+        `https://tic-project-plantly.herokuapp.com/plants/${this.id}`
       );
       this.plant = plant?.data || {};
     },
