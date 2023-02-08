@@ -1,4 +1,5 @@
 <template>
+  <the-header></the-header>
   <h1>Add a new reminder</h1>
   <form @submit.prevent="submitForm" class="form">
     <div class="reminder-info-container">

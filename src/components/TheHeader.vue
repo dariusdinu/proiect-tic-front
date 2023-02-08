@@ -87,7 +87,6 @@ nav a.router-link-exact-active {
 
 .btn {
   border-radius: 100rem;
-  font-size: 2rem;
   outline: none;
   cursor: pointer;
   padding: 1rem 2rem;
@@ -106,7 +105,6 @@ nav a.router-link-exact-active {
   margin: 1.5rem;
   border: none;
   border-radius: 20rem;
-  font-size: 1.8rem;
   outline: none;
   cursor: pointer;
   border: none;

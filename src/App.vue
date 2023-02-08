@@ -1,6 +1,4 @@
 <template>
-  <the-header></the-header>
-
   <router-view />
 </template>
 
@@ -64,6 +62,14 @@ html {
   .reminders-container {
     grid-template-columns: 1fr 1fr;
   }
+  .btn,
+  .btn-login,
+  .btn-logout {
+    font-size: 1.9rem;
+  }
+  .plant-form {
+    width: 60%;
+  }
 }
 
 /* Mobile */
@@ -96,6 +102,17 @@ html {
     grid-template-columns: 1fr;
   }
   .container-main-info {
+    grid-template-columns: 1fr;
+  }
+  .btn,
+  .btn-login,
+  .btn-logout {
+    font-size: 1.3rem;
+  }
+  .plant-form {
+    width: 80%;
+  }
+  .input-fields--container {
     grid-template-columns: 1fr;
   }
 }
@@ -131,6 +148,17 @@ html {
   }
   .container-main-info {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .btn,
+  .btn-login,
+  .btn-logout {
+    font-size: 2rem;
+  }
+  .plant-form {
+    width: 50rem;
+  }
+  .input-fields--container {
+    grid-template-columns: 1fr;
   }
 }
 

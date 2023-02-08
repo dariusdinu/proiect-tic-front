@@ -1,0 +1,70 @@
+<template>
+  <teleport to="body">
+    <transition name="dialog">
+      <div class="modal" v-if="show">
+        <div class="modal-body">
+          <slot></slot>
+        </div>
+      </div>
+    </transition>
+  </teleport>
+</template>
+
+<script>
+export default {
+  name: "BaseModal",
+  data: () => ({
+    show: false,
+  }),
+  methods: {
+    handleShow() {
+      this.show = true;
+    },
+    handleClose() {
+      this.show = false;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.dialog-enter-active,
+.dialog-leave-active {
+  transition: opacity 0.3s;
+}
+.dialog-enter,
+.dialog-leave-to {
+  opacity: 0;
+}
+.modal {
+  align-items: center;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.modal-body {
+  background-color: var(--main-light);
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 0.125rem 0.5rem hsla(0, 0%, 0%, 0.25);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  max-width: 40rem;
+  overflow: hidden;
+  padding: 4rem;
+  position: fixed;
+  row-gap: 1rem;
+  top: 20vh;
+  width: 100%;
+  z-index: 100;
+}
+</style>

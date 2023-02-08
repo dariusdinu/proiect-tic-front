@@ -1,4 +1,5 @@
 <template>
+  <the-header></the-header>
   <div>
     <div>
       <h1 class="title">Plant Detail</h1>
@@ -134,14 +135,14 @@ export default {
 
 .plant-form {
   border-radius: 1.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
   align-items: center;
   flex-direction: column;
   font-weight: bold;
   text-align: center;
-  width: 60%;
   box-shadow: -8px -8px 25px var(--highlight), 5px 5px 20px var(--shadow);
   animation: rise 0.5s ease-in;
 }
@@ -166,8 +167,8 @@ export default {
   color: var(--main-light);
   font-weight: 600;
   font-size: 2rem;
-  margin: 1.8rem;
-  margin-bottom: 3.2rem;
+  margin: 1.2rem;
+  margin-bottom: 2rem;
   transition: all 0.3s;
 }
 
@@ -209,7 +210,7 @@ export default {
   padding: 1.2rem;
   font-size: 1.8rem;
   background-color: var(--main-light);
-  box-shadow: -8px -8px 20px var(--highlight), 5px 5px 20px var(--shadow);
+  box-shadow: -5px -5px 15px var(--highlight), 5px 5px 20px var(--shadow);
   animation: rise 1.5s ease-in;
   color: var(--dark-accent);
 }

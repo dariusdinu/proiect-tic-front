@@ -1,4 +1,5 @@
 <template>
+  <the-header></the-header>
   <div>
     <h1>Add a new friend</h1>
     <form @submit.prevent="submitForm" class="form">
@@ -242,16 +243,18 @@ export default {
 
 h1 {
   margin: 1rem;
-  margin-left: 3rem;
+  margin-left: auto;
+  margin-right: auto;
   color: var(--dark-accent);
   font-size: 3.2rem;
   font-weight: 600;
+  text-align: center;
   width: 50%;
   animation: show 0.3s ease-in;
 }
 
 .form {
-  margin-top: 10rem;
+  margin-top: 2rem;
   border-radius: 1.5rem;
   padding: 1rem;
   margin-left: auto;
@@ -267,7 +270,6 @@ h1 {
 
 .input-fields--container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .input {

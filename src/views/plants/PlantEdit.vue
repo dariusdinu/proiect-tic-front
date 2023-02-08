@@ -1,4 +1,5 @@
 <template>
+  <the-header></the-header>
   <div>
     <h1>Edit Plant</h1>
     <form @submit.prevent="submitForm" class="form">
@@ -48,7 +49,7 @@
             <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
-            <option value="9">8</option>
+            <option value="9">9</option>
             <option value="10">10</option>
           </select>
           <i class="fa-solid fa-angle-down"></i>

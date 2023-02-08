@@ -1,4 +1,6 @@
 <template>
+  <the-header></the-header>
+  <confirm-dialog ref="confirmDialog"></confirm-dialog>
   <main>
     <p v-if="error !== null">{{ error }}</p>
     <header class="header">
@@ -82,10 +84,20 @@ export default {
     },
     async handleDelete(plantId) {
       this.error = null;
-      try {
-        await this.$store.dispatch("deletePlant", plantId);
-      } catch (error) {
-        this.error = error.message;
+      const result = await this.$refs.confirmDialog.handleShow({
+        closeButton: "Cancel",
+        message:
+          "Do you really want to delete this plant? This action cannot be undone.",
+        saveButton: "Delete",
+        title: "Are you sure?",
+      });
+      if (result) {
+        try {
+          await this.$store.dispatch("deletePlant", plantId);
+          this.$router.push("/");
+        } catch (error) {
+          this.error = error.message || "Something went wrong!";
+        }
       }
     },
   },

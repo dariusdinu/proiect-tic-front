@@ -1,4 +1,5 @@
 <template>
+  <the-header></the-header>
   <div>
     <h1 class="title">All reminders</h1>
     <div class="filter-form">
@@ -212,18 +213,19 @@ export default {
 
 .filter-form {
   display: grid;
-  width: 100vw;
+  width: 100%;
 }
 
 .reminders-container {
   display: grid;
   row-gap: 2.5rem;
   column-gap: 2.5rem;
-  margin: 2rem 2rem;
+  padding: 0rem 0.5rem;
+  width: 100%;
 }
 .reminder-card {
   border-radius: 1.5rem;
-  padding: 1.2rem;
+  padding: 1.2rem 0.8rem;
   background-color: var(--main-light);
   box-shadow: -8px -8px 25px var(--highlight), 5px 5px 20px var(--shadow);
   animation: rise 1.5s ease-in;
@@ -237,7 +239,7 @@ export default {
   border-radius: 1.5rem;
   font-size: 1.6rem;
   margin: 1.5rem 1rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   border: none;
   font-weight: 700;
   color: var(--dark-accent);
